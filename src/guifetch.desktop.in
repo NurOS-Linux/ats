@@ -1,0 +1,24 @@
+[Desktop Entry]
+Name=GUIFetch
+Comment=System information viewer
+Comment[ru]=Просмотр системной информации
+Comment[de]=Systeminformations-Viewer
+Comment[fr]=Afficheur d'informations système
+Comment[es]=Visor de información del sistema
+GenericName=System Information
+GenericName[ru]=Системная информация
+GenericName[de]=Systeminformationen
+GenericName[fr]=Informations système
+GenericName[es]=Información del sistema
+Exec=@bindir@/guifetch
+Icon=computer
+Terminal=false
+Type=Application
+Categories=System;Monitor;
+Keywords=system;info;hardware;os;specs;
+Keywords[ru]=система;информация;железо;ос;характеристики;
+Keywords[de]=system;info;hardware;betriebssystem;spezifikationen;
+Keywords[fr]=système;info;matériel;os;spécifications;
+Keywords[es]=sistema;info;hardware;so;especificaciones;
+StartupNotify=true
+StartupWMClass=guifetch

@@ -1,0 +1,5 @@
+option('libcpuid',
+    type: 'feature',
+    value: 'auto',
+    description: 'Enable libcpuid support for enhanced CPU detection'
+)

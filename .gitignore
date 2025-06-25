@@ -131,7 +131,6 @@ gschemas.compiled
 *.gladep
 
 # GTK application files
-*.desktop.in
 *.desktop~
 
 # Intltool files
