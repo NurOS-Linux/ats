@@ -13,6 +13,19 @@ extern string get_storage_info();
 extern string get_serial_number();
 extern string get_hostname();
 
+// Define the _() function for translations using gettext (not dgettext)
+[CCode (cname = "gettext", cheader_filename = "libintl.h")]
+extern unowned string _(string msgid);
+
+[CCode (cname = "bindtextdomain", cheader_filename = "libintl.h")]
+extern unowned string bindtextdomain(string domainname, string dirname);
+
+[CCode (cname = "textdomain", cheader_filename = "libintl.h")]
+extern unowned string textdomain(string domainname);
+
+[CCode (cname = "bind_textdomain_codeset", cheader_filename = "libintl.h")]
+extern unowned string bind_textdomain_codeset(string domainname, string codeset);
+
 public class GUIFetch : Adw.Application {
     private Adw.ApplicationWindow window;
     private Adw.HeaderBar header_bar;
@@ -22,11 +35,17 @@ public class GUIFetch : Adw.Application {
     
     public GUIFetch() {
         Object(application_id: "org.guifetch.app");
+        
+        // Initialize gettext
+        Intl.setlocale();
+        bindtextdomain("guifetch", Config.LOCALEDIR);
+        bind_textdomain_codeset("guifetch", "UTF-8");
+        textdomain("guifetch");
     }
     
     protected override void activate() {
         window = new Adw.ApplicationWindow(this);
-        window.set_title("About This Computer");
+        window.set_title(_("About This Computer"));
         window.set_default_size(580, 650);
         window.set_resizable(true);
         window.set_size_request(520, 580);
@@ -150,21 +169,21 @@ public class GUIFetch : Adw.Application {
     
     private void load_system_info() {
         // Add detailed system information
-        create_info_row("Processor", get_cpu_detailed_info());
+        create_info_row(_("Processor"), get_cpu_detailed_info());
         add_separator();
-        create_info_row("Memory", get_memory_info());
+        create_info_row(_("Memory"), get_memory_info());
         add_separator();
-        create_info_row("Graphics", get_gpu_info());
+        create_info_row(_("Graphics"), get_gpu_info());
         add_separator();
-        create_info_row("Uptime", get_uptime_info());
+        create_info_row(_("Uptime"), get_uptime_info());
         add_separator();
-        create_info_row("Storage", get_storage_info());
+        create_info_row(_("Storage"), get_storage_info());
         
         // Add serial number if available
         string serial = get_serial_number();
         if (serial != "Unknown" && serial != "") {
             add_separator();
-            create_info_row("Serial Number", serial);
+            create_info_row(_("Serial Number"), serial);
         }
     }
     

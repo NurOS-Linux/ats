@@ -26,6 +26,12 @@ config_data.set_quoted('PROJECT_ID', project_id)
 config_data.set_quoted('LOCALEDIR', get_option('prefix') / get_option('localedir'))
 config_data.set_quoted('DATADIR', get_option('prefix') / get_option('datadir'))
 
+# Generate config.h
+config_h = configure_file(
+    output: 'config.h',
+    configuration: config_data
+)
+
 # Dependencies
 gtk4_dep = dependency('gtk4', version: '>= 4.6')
 adwaita_dep = dependency('libadwaita-1', version: '>= 1.2')
@@ -66,6 +72,7 @@ gnome = import('gnome')
 i18n = import('i18n')
 
 # Include subdirectories
+subdir('po')
 subdir('data')
 subdir('src')
 

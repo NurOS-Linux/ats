@@ -1,0 +1,62 @@
+# Russian translation for GUIFetch
+# Copyright (C) 2024 AnmiTaliDev
+# This file is distributed under the same license as the guifetch package.
+# AnmiTaliDev <anmitalidev@example.com>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: guifetch 0.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/AnmiTaliDev/guifetch/issues\n"
+"POT-Creation-Date: 2024-01-01 12:00+0000\n"
+"PO-Revision-Date: 2024-01-01 12:00+0000\n"
+"Last-Translator: AnmiTaliDev <anmitalidev@example.com>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: src/ui/main.vala:25
+msgid "About This Computer"
+msgstr "О компьютере"
+
+#: src/ui/main.vala:138
+msgid "Processor"
+msgstr "Процессор"
+
+#: src/ui/main.vala:140
+msgid "Memory"
+msgstr "Память"
+
+#: src/ui/main.vala:142
+msgid "Graphics"
+msgstr "Графика"
+
+#: src/ui/main.vala:144
+msgid "Uptime"
+msgstr "Время работы"
+
+#: src/ui/main.vala:146
+msgid "Storage"
+msgstr "Хранилище"
+
+#: src/ui/main.vala:152
+msgid "Serial Number"
+msgstr "Серийный номер"
+
+#: data/guifetch.desktop.in:2
+msgid "GUIFetch"
+msgstr "GUIFetch"
+
+#: data/guifetch.desktop.in:3
+msgid "System Information"
+msgstr "Информация о системе"
+
+#: data/guifetch.desktop.in:4
+msgid "View detailed system information"
+msgstr "Просмотр подробной информации о системе"
+
+#: data/guifetch.desktop.in:5
+msgid "system;information;hardware;specs;about;"
+msgstr "система;информация;железо;характеристики;о компьютере;"

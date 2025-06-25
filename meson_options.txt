@@ -3,3 +3,9 @@ option('libcpuid',
     value: 'auto',
     description: 'Enable libcpuid support for enhanced CPU detection'
 )
+
+option('nls',
+    type: 'boolean',
+    value: true,
+    description: 'Enable native language support (translations)'
+)
