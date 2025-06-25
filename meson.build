@@ -35,7 +35,7 @@ math_dep = meson.get_compiler('c').find_library('m', required: false)
 
 # Optional libcpuid dependency
 libcpuid_found = false
-c_args = []
+c_args = ['-D_GNU_SOURCE']  # Добавляем _GNU_SOURCE глобально
 link_args = []
 
 cc = meson.get_compiler('c')
