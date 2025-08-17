@@ -3,4 +3,25 @@
   <gresource prefix="/org/guifetch">
     <file>linux.svg</file>
   </gresource>
+    <gresource prefix="/org/guifetch">
+    <file>arch.svg</file>
+  </gresource>
+  <gresource prefix="/org/guifetch">
+    <file>debian.svg</file>
+  </gresource>
+    <gresource prefix="/org/guifetch">
+    <file>fedora.svg</file>
+  </gresource>
+    <gresource prefix="/org/guifetch">
+    <file>nuros.svg</file>
+  </gresource>
+    <gresource prefix="/org/guifetch">
+    <file>mint.svg</file>
+  </gresource>
+    <gresource prefix="/org/guifetch">
+    <file>ubuntu.svg</file>
+  </gresource>
+    <gresource prefix="/org/guifetch">
+    <file>gentoo.svg</file>
+  </gresource>
 </gresources>

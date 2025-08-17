@@ -34,7 +34,7 @@ public class GUIFetch : Adw.Application {
     private Gtk.Image logo_image;
     
     public GUIFetch() {
-        Object(application_id: "org.guifetch.app");
+        Object(application_id: "io.github.realbxnnie.Guifetch");
         
         // Initialize gettext
         Intl.setlocale();
@@ -45,11 +45,10 @@ public class GUIFetch : Adw.Application {
     
     protected override void activate() {
         window = new Adw.ApplicationWindow(this);
-        window.set_title(_("About This Computer"));
-        window.set_default_size(580, 650);
-        window.set_resizable(true);
-        window.set_size_request(520, 580);
-        
+        window.set_title(_("About This PC"));
+        window.set_default_size(530, 650);
+        window.set_resizable(false);
+
         setup_ui();
         load_system_info();
         
@@ -61,7 +60,7 @@ public class GUIFetch : Adw.Application {
         header_bar = new Adw.HeaderBar();
         header_bar.set_show_end_title_buttons(true);
         header_bar.set_show_start_title_buttons(true);
-        header_bar.set_title_widget(new Gtk.Label(""));
+        header_bar.set_title_widget(new Gtk.Label("About This PC"));
         header_bar.add_css_class("flat");
         
         // Main content container
@@ -97,23 +96,23 @@ public class GUIFetch : Adw.Application {
         header_box.set_margin_bottom(32);
         header_box.set_margin_start(40);
         header_box.set_margin_end(40);
-        header_box.set_halign(Gtk.Align.START);
+        header_box.set_halign(Gtk.Align.CENTER);
         
         // Logo
         logo_image = new Gtk.Image();
         logo_image.set_pixel_size(64);
-        logo_image.set_halign(Gtk.Align.START);
+        logo_image.set_halign(Gtk.Align.CENTER);
         logo_image.set_valign(Gtk.Align.CENTER);
         load_embedded_logo();
         
         // OS info box
         var os_info_box = new Gtk.Box(Gtk.Orientation.VERTICAL, 4);
-        os_info_box.set_halign(Gtk.Align.START);
+        os_info_box.set_halign(Gtk.Align.CENTER);
         os_info_box.set_valign(Gtk.Align.CENTER);
         
         // OS name
         var os_label = new Gtk.Label(null);
-        os_label.set_halign(Gtk.Align.START);
+        os_label.set_halign(Gtk.Align.CENTER);
         os_label.add_css_class("title-1");
         os_label.set_markup("<span size='x-large' weight='bold'>%s</span>".printf(get_os_info()));
         
@@ -138,15 +137,62 @@ public class GUIFetch : Adw.Application {
         main_content.append(header_box);
     }
     
-    private void load_embedded_logo() {
-        // Load logo from gresource
+private void load_embedded_logo() {
+    string distro_logo = "linux.svg";
+    
+    try {
+        string os_release;
+        FileUtils.get_contents("/etc/os-release", out os_release);
+        
+        foreach (string line in os_release.split("\n")) {
+            if (line.has_prefix("ID=")) {  
+                string distro_id = line.split("=")[1].replace("\"", "").strip().down();
+                switch (distro_id) {
+                    case "arch":
+                        distro_logo = "arch.svg";
+                        break;
+                    case "ubuntu":
+                    case "pop":
+                        distro_logo = "ubuntu.svg";
+                        break;
+                    case "fedora":
+                        distro_logo = "fedora.svg";
+                        break;
+                    case "debian":
+                        distro_logo = "debian.svg";
+                        break;
+                    case "linuxmint":
+                        distro_logo = "mint.svg";
+                        break;
+                    case "gentoo":
+                        distro_logo = "gentoo.svg";
+                        break;
+                    case "nuros":
+                        distro_logo = "nuros.svg";
+                        break;
+                }
+                break; // Stop after finding ID
+            }
+        }
+    } catch (Error e) {
+        warning("OS detection failed: %s", e.message);
+    }
+    
+    string[] try_paths = {
+        "/org/guifetch/%s".printf(distro_logo),
+        "/org/guifetch/linux.svg"
+    };
+    
+    foreach (string path in try_paths) {
         try {
-            logo_image.set_from_resource("/org/guifetch/linux.svg");
+            logo_image.set_from_resource(path);
+            return; // Success
         } catch (Error e) {
-            // Fallback to icon
-            logo_image.set_from_icon_name("computer");
+            continue; // Try next path
         }
     }
+    
+}
     
     private void create_info_section() {
         // Information card
@@ -193,11 +239,13 @@ public class GUIFetch : Adw.Application {
         row_box.set_margin_bottom(12);
         
         // Label (left side, consistent width)
-        var label_widget = new Gtk.Label(label + ":");
+        var label_widget = new Gtk.Label(null);
         label_widget.set_xalign(0);
         label_widget.set_size_request(120, -1);
         label_widget.add_css_class("body");
-        label_widget.set_valign(Gtk.Align.START);
+        label_widget.set_valign(Gtk.Align.CENTER);
+        label_widget.set_markup("<span size='x-large' weight='bold'>%s</span>".printf(label));
+        label_widget.set_halign(Gtk.Align.CENTER);
         
         // Value (right side, expandable)
         var value_widget = new Gtk.Label(value);
@@ -207,7 +255,8 @@ public class GUIFetch : Adw.Application {
         value_widget.set_wrap_mode(Pango.WrapMode.WORD_CHAR);
         value_widget.set_selectable(true);
         value_widget.add_css_class("body");
-        value_widget.set_valign(Gtk.Align.START);
+        value_widget.opacity = 0.5;
+        value_widget.set_valign(Gtk.Align.CENTER);
         
         row_box.append(label_widget);
         row_box.append(value_widget);

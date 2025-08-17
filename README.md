@@ -1,11 +1,16 @@
-# GUIFetch
+<!-- IMAGINE USING HTML IN MARKDOWN :sob: -->
 
-A modern, GTK4-based system information viewer inspired by macOS's "About This Mac" dialog. GUIFetch provides a clean and elegant interface to display detailed system information on Linux.
+<center><h1 style="font-family: monospace; font-size: 3.5em; text-shadow: 0px 0px 5px rgba(0, 140, 255, 1)">GuiFetch+</h1>
 
-![GUIFetch Screenshot](screenshot.png)
+A fork of [AnmiTaliDev](https://github.com/AnmiTaliDev)'s GuiFetch.
+
+<br>
+
+Modern, GTK4-based system information viewer inspired by macOS's "About This Mac" dialog. GuiFetch+ provides a clean and elegant interface to display detailed system information on Linux.
+
+<img src="screenshot.png" style="box-shadow: 0px 0px 12px rgba(0, 140, 255, 1); border-radius: 2.3em">
 
 ## Features
-
 - **Clean, modern interface** built with GTK4 and libadwaita
 - **Comprehensive system information** including:
   - Operating system details
@@ -19,8 +24,6 @@ A modern, GTK4-based system information viewer inspired by macOS's "About This M
 - **Responsive design** that adapts to different window sizes
 - **Native Linux integration** with proper desktop file
 - **Fast and lightweight** written in Vala and C
-
-## Installation
 
 ### Prerequisites
 
@@ -52,12 +55,10 @@ sudo pacman -S meson vala gtk4 libadwaita glib2 libcpuid
 ```
 
 ### Building from Source
-
+```
 1. Clone the repository:
 ```bash
-git clone https://github.com/AnmiTaliDev/guifetch.git
-cd guifetch
-```
+git clone https://github.com/realbxnnie/guifetchplus
 
 2. Create a build directory:
 ```bash
@@ -76,7 +77,7 @@ sudo meson install -C builddir
 
 ### Running
 
-After building, you can run GUIFetch directly:
+After building, you can run GuiFetch+ directly:
 ```bash
 ./builddir/src/guifetch
 ```
@@ -112,7 +113,6 @@ GUIFetch is built with a hybrid approach:
 - `src/main.vala` - Main application logic and UI construction
 - `src/info.c` - System information gathering functions
 - `src/info.h` - C header definitions for Vala interop
-- `src/linux.svg` - Embedded Linux logo
 - `src/guifetch.gresource.xml` - Resource bundle configuration
 
 ## Contributing
@@ -157,4 +157,5 @@ If you encounter any issues or have questions:
 
 ---
 
-Made with ❤️ by [AnmiTaliDev](https://github.com/AnmiTaliDev)
+<span style="font-family: 'serif'; font-size: 2em;">Made with ❤️ by [realbxnnie](https://github.com/realbxnnie)</span>
+</center>
