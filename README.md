@@ -55,10 +55,10 @@ sudo pacman -S meson vala gtk4 libadwaita glib2 libcpuid
 ```
 
 ### Building from Source
-```
 1. Clone the repository:
 ```bash
 git clone https://github.com/realbxnnie/guifetch
+```
 
 2. Create a build directory:
 ```bash
