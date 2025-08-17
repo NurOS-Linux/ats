@@ -37,6 +37,7 @@ gtk4_dep = dependency('gtk4', version: '>= 4.6')
 adwaita_dep = dependency('libadwaita-1', version: '>= 1.2')
 glib_dep = dependency('glib-2.0', version: '>= 2.70')
 gio_dep = dependency('gio-2.0')
+gee_dep = dependency('gee-0.8')
 math_dep = meson.get_compiler('c').find_library('m', required: false)
 
 # Optional libcpuid dependency

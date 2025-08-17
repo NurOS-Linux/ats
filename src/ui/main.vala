@@ -1,5 +1,7 @@
 using Gtk;
+using Adw;
 using GLib;
+using GuiFetch;
 
 [CCode (cheader_filename = "info.h")]
 extern string get_os_name();
@@ -49,6 +51,8 @@ public class GUIFetch : Adw.Application {
         window.set_default_size(530, 650);
         window.set_resizable(false);
 
+        Logotypes.init();
+        
         setup_ui();
         load_system_info();
         
@@ -146,31 +150,8 @@ private void load_embedded_logo() {
         
         foreach (string line in os_release.split("\n")) {
             if (line.has_prefix("ID=")) {  
-                string distro_id = line.split("=")[1].replace("\"", "").strip().down();
-                switch (distro_id) {
-                    case "arch":
-                        distro_logo = "arch.svg";
-                        break;
-                    case "ubuntu":
-                    case "pop":
-                        distro_logo = "ubuntu.svg";
-                        break;
-                    case "fedora":
-                        distro_logo = "fedora.svg";
-                        break;
-                    case "debian":
-                        distro_logo = "debian.svg";
-                        break;
-                    case "linuxmint":
-                        distro_logo = "mint.svg";
-                        break;
-                    case "gentoo":
-                        distro_logo = "gentoo.svg";
-                        break;
-                    case "nuros":
-                        distro_logo = "nuros.svg";
-                        break;
-                }
+                string distro_id = line.split("=")[1].replace("\"", "").strip();
+                distro_logo = Logotypes.get(distro_id);
                 break; // Stop after finding ID
             }
         }
@@ -178,19 +159,7 @@ private void load_embedded_logo() {
         warning("OS detection failed: %s", e.message);
     }
     
-    string[] try_paths = {
-        "/org/guifetch/%s".printf(distro_logo),
-        "/org/guifetch/linux.svg"
-    };
-    
-    foreach (string path in try_paths) {
-        try {
-            logo_image.set_from_resource(path);
-            return; // Success
-        } catch (Error e) {
-            continue; // Try next path
-        }
-    }
+    logo_image.set_from_resource("/org/guifetch/%s".printf(distro_logo));
     
 }
     

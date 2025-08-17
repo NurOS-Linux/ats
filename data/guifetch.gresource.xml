@@ -24,4 +24,31 @@
     <gresource prefix="/org/guifetch">
     <file>gentoo.svg</file>
   </gresource>
+      <gresource prefix="/org/guifetch">
+    <file>garuda.svg</file>
+  </gresource>
+      <gresource prefix="/org/guifetch">
+    <file>evour.svg</file>
+  </gresource>
+      <gresource prefix="/org/guifetch">
+    <file>cachyos.svg</file>
+  </gresource>
+        <gresource prefix="/org/guifetch">
+    <file>macos.svg</file>
+  </gresource>
+      <gresource prefix="/org/guifetch">
+    <file>asahi.svg</file>
+  </gresource>
+      <gresource prefix="/org/guifetch">
+    <file>artix.svg</file>
+  </gresource>
+      <gresource prefix="/org/guifetch">
+    <file>manjaro.svg</file>
+  </gresource>
+      <gresource prefix="/org/guifetch">
+    <file>pop.svg</file>
+  </gresource>
+      <gresource prefix="/org/guifetch">
+    <file>arco.svg</file>
+  </gresource>
 </gresources>

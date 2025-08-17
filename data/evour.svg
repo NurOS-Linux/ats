@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50.4mm" height="54.4mm" inkscape:version="1.0.2 (e86c870879, 2021-01-15, custom)" sodipodi:docname="Endeavouros_Logo.svg" version="1.1" viewBox="0 0 50.4 54.4" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd">
+ <sodipodi:namedview id="cvfa" bordercolor="#666666" borderopacity="1.0" inkscape:current-layer="g1230-2" inkscape:cx="196.53533" inkscape:cy="181.7514" inkscape:document-rotation="0" inkscape:document-units="mm" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="1014" inkscape:window-maximized="1" inkscape:window-width="1920" inkscape:window-x="0" inkscape:window-y="36" inkscape:zoom="1.743335" pagecolor="#ffffff" showgrid="false"/>
+ <title>EndeavourOS Logo</title>
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g transform="translate(-66.5 -118)" inkscape:groupmode="layer" inkscape:label="Layer 1">
+  <g transform="translate(76.2 -12.7)">
+   <g transform="matrix(1.47 0 0 1.47 -519 105)">
+    <g transform="matrix(.963 0 0 .983 13.5 .76)">
+     <g transform="matrix(.678 0 0 .678 452 49.2)">
+      <path d="m-127-42.3c4.57 6.45 23.8 31.4 10.7 36.6-6.12 2.81-34-1.65-33.6-0.921-2 3.28-3.59 5.92-3.59 5.92s21.5 0.967 38.1-1.27c23.7-3.18-4.88-33.5-11.6-40.3z" style="fill:#7f7fff;stroke-width:.585" inkscape:connector-curvature="0"/>
+      <path d="m-127-42.3c-1.52 0.209-29.4 34.5-29.4 34.5s2.01 0.57 6.58 1.23c1.48-1.15 22.3-36.2 22.9-35.7-0.0107-0.0141-0.028-0.0193-0.0522-0.016z" style="fill:#ff7f7f;stroke-width:.585" inkscape:connector-curvature="0"/>
+      <path d="m-127-42.3c-0.96-0.156-22.9 35.7-22.9 35.7s19.9 2.1 28.1 1.96c23.1-0.39 0.176-30.6-5.16-37.7-7e-3 -7e-3 -0.0151-0.0108-0.0248-0.0124z" style="fill:#7f3fbf;stroke-width:.585" inkscape:connector-curvature="0"/>
+     </g>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>

@@ -1,6 +1,7 @@
 # Sources
 sources = [
     'ui/main.vala',
+    'ui/Logotypes.vala',
     'info.c',
     guifetch_resources,  # Available from parent scope
     config_h  # Include config.h
@@ -19,7 +20,7 @@ vala_args_local = vala_args + [
 executable(
     project_name,
     sources,
-    dependencies: [gtk4_dep, adwaita_dep, glib_dep, gio_dep, math_dep],
+    dependencies: [gtk4_dep, adwaita_dep, glib_dep, gio_dep, math_dep, gee_dep],
     include_directories: include_dirs,
     vala_args: vala_args_local,
     c_args: c_args,
