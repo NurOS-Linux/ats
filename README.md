@@ -26,9 +26,10 @@ Modern, GTK4-based system information viewer inspired by macOS's "About This Mac
 - **Native Linux integration** with proper desktop file
 - **Fast and lightweight** written in Vala and C
 
-### Prerequisites
+### Dependencies
 
 - GTK4 (>= 4.6)
+- Gee (>= 0.8)
 - libadwaita (>= 1.2)
 - GLib (>= 2.70)
 - Meson build system
@@ -40,19 +41,19 @@ Modern, GTK4-based system information viewer inspired by macOS's "About This Mac
 
 ```bash
 sudo apt update
-sudo apt install build-essential meson valac libgtk-4-dev libadwaita-1-dev libglib2.0-dev libgio2.0-dev libcpuid-dev
+sudo apt install build-essential meson valac libgtk-4-dev libadwaita-1-dev libglib2.0-dev libgio2.0-dev libcpuid-dev libgee-0.8-dev
 ```
 
 ### Fedora
 
 ```bash
-sudo dnf install meson vala gtk4-devel libadwaita-devel glib2-devel libcpuid-devel
+sudo dnf install meson vala gtk4-devel libadwaita-devel glib2-devel libcpuid-devel libgee-devel
 ```
 
 ### Arch Linux
 
 ```bash
-sudo pacman -S meson vala gtk4 libadwaita glib2 libcpuid
+sudo pacman -S meson vala gtk4 libadwaita glib2 libcpuid libgee
 ```
 
 ### Building from Source
@@ -111,10 +112,11 @@ GUIFetch is built with a hybrid approach:
 
 ### Key Components
 
-- `src/main.vala` - Main application logic and UI construction
+- `src/ui/main.vala` - Main application logic and UI construction
+- `src/ui/Logotypes.vala` - Logotypes dictionary
 - `src/info.c` - System information gathering functions
 - `src/info.h` - C header definitions for Vala interop
-- `src/guifetch.gresource.xml` - Resource bundle configuration
+- `data/guifetch.gresource.xml` - Resource bundle configuration
 
 ## Contributing
 
