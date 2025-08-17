@@ -152,7 +152,7 @@ This project is licensed under the GPL-3.0 License - see the [LICENSE](LICENSE) 
 
 > [!NOTE]
 > If you encounter any issues or have questions:
-> 1. Check the [Issues](https://github.com/AnmiTaliDev/guifetch/issues) page
+> 1. Check the [Issues](https://github.com/realbxnnie/guifetch/issues) page
 > 2. Create a new issue with detailed information about your problem
 > 3. Include your distribution, GTK version, and any error messages
 
