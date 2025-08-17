@@ -1,6 +1,7 @@
+
 <!-- IMAGINE USING HTML IN MARKDOWN :sob: -->
 
-<center><h1 style="font-family: monospace; font-size: 3.5em; text-shadow: 0px 0px 5px rgba(0, 140, 255, 1)">GuiFetch+</h1>
+# GuiFetch+
 
 A fork of [AnmiTaliDev](https://github.com/AnmiTaliDev)'s GuiFetch.
 
@@ -147,15 +148,14 @@ This project is licensed under the GPL-3.0 License - see the [LICENSE](LICENSE) 
 - Logo adapted from the classic Tux penguin
 - Thanks to the GNOME project for the amazing development tools
 
-## Support
+> [!NOTE]
+> If you encounter any issues or have questions:
+> 1. Check the [Issues](https://github.com/AnmiTaliDev/guifetch/issues) page
+> 2. Create a new issue with detailed information about your problem
+> 3. Include your distribution, GTK version, and any error messages
 
-If you encounter any issues or have questions:
-
-1. Check the [Issues](https://github.com/AnmiTaliDev/guifetch/issues) page
-2. Create a new issue with detailed information about your problem
-3. Include your distribution, GTK version, and any error messages
 
 ---
 
 <span style="font-family: 'serif'; font-size: 2em;">Made with ❤️ by [realbxnnie](https://github.com/realbxnnie)</span>
-</center>
+</div>
