@@ -58,7 +58,7 @@ sudo pacman -S meson vala gtk4 libadwaita glib2 libcpuid
 ```
 1. Clone the repository:
 ```bash
-git clone https://github.com/realbxnnie/guifetchplus
+git clone https://github.com/realbxnnie/guifetch
 
 2. Create a build directory:
 ```bash
