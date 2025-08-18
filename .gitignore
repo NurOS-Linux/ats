@@ -47,6 +47,7 @@ core.*
 
 # Compiler cache
 .ccache/
+.cache/
 
 # LLVM bitcode
 *.bc
