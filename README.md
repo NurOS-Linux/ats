@@ -3,8 +3,8 @@
 # 🖥️ GUIFetch+  
 *A better way to get system information on Linux*  
 
-[![Latest Release](https://img.shields.io/github/v/release/realbxnnie/guifetch?color=blue&label=Latest%20Release)](https://github.com/realbxnnie/guifetch/releases)  
-![Vala 29.3%](https://img.shields.io/badge/Vala-29.3%25-brightgreen)  
+[![Latest Release](https://img.shields.io/github/v/release/realbxnnie/guifetch?color=blue&label=Latest%20Release)](https://github.com/nuros-linux/ats/releases)  
+![Vala 29.3%](https://img.shields.io/badge/Vala-29.3%25-red)  
 
 Modern, GTK4-based system information viewer inspired by macOS' **"About This Mac"** dialog.  
 GUIFetch+ provides a **clean and elegant interface** to display detailed system information.
