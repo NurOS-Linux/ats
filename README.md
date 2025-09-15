@@ -1,161 +1,127 @@
+<div align="center">
 
-<!-- IMAGINE USING HTML IN MARKDOWN :sob: -->
+# 🖥️ GUIFetch+  
+*A better way to get system information on Linux*  
 
-# GuiFetch+
+[![Latest Release](https://img.shields.io/github/v/release/realbxnnie/guifetch?color=blue&label=Latest%20Release)](https://github.com/realbxnnie/guifetch/releases)  
+![Vala 98.8%](https://img.shields.io/badge/Vala-98.8%25-brightgreen)  
 
-A fork of [AnmiTaliDev](https://github.com/AnmiTaliDev)'s GuiFetch.
+Modern, GTK4-based system information viewer inspired by macOS' **"About This Mac"** dialog.  
+GUIFetch+ provides a **clean and elegant interface** to display detailed system information.
 
-<br>
+<img src="screenshot.png" width="60%" style="border-radius: 2.3em; box-shadow: 0 0 12px rgba(0, 140, 255, 0.8);" />
 
-Modern, GTK4-based system information viewer inspired by macOS's "About This Mac" dialog. GuiFetch+ provides a clean and elegant interface to display detailed system information on Linux.
+---
 
-<img src="screenshot.png" style="box-shadow: 0px 0px 12px rgba(0, 140, 255, 1); border-radius: 2.3em">
+### 🌟 Features
 
-## Features
-- **Clean, modern interface** built with GTK4 and libadwaita
-- **Comprehensive system information** including:
-  - Operating system details
-  - Kernel version
-  - Detailed CPU information (with libcpuid support)
+- **✨ Modern GTK4 interface** with libadwaita  
+- **💻 Comprehensive system info**:
+  - OS details & kernel version
+  - CPU info (with libcpuid support)
   - Memory usage with percentages
-  - Graphics card information
+  - GPU information
   - System uptime
-  - Storage information
+  - Storage info
   - Serial number (when available)
-- **Responsive design** that adapts to different window sizes
-- **Native Linux integration** with proper desktop file
-- **Fast and lightweight** written in Vala and C
+- **📐 Responsive design** for any window size  
+- **🖥️ Native Linux integration**  
+- **⚡ Fast & lightweight** (Vala + C)
 
-### Dependencies
+---
 
-- GTK4 (>= 4.6)
-- Gee (>= 0.8)
-- libadwaita (>= 1.2)
-- GLib (>= 2.70)
-- Meson build system
-- Vala compiler
-- C compiler (GCC or Clang)
-- libcpuid (optional, for enhanced CPU detection)
+### 🛠️ Dependencies
 
-### Ubuntu/Debian
+| Library | Purpose |
+|--------|---------|
+| GTK4 ≥ 4.6 | GUI toolkit |
+| libadwaita ≥ 1.2 | Modern GNOME components |
+| GLib ≥ 2.70 | Core library |
+| GIO | Virtual file system API |
+| libcpuid | Optional: enhanced CPU info |
+| Gee ≥ 0.8 | Collections framework |
 
+**Ubuntu/Debian:**  
 ```bash
 sudo apt update
 sudo apt install build-essential meson valac libgtk-4-dev libadwaita-1-dev libglib2.0-dev libgio2.0-dev libcpuid-dev libgee-0.8-dev
 ```
 
-### Fedora
-
+**Fedora:**  
 ```bash
 sudo dnf install meson vala gtk4-devel libadwaita-devel glib2-devel libcpuid-devel libgee-devel
 ```
 
-### Arch Linux
-
+**Arch Linux:**  
 ```bash
 sudo pacman -S meson vala gtk4 libadwaita glib2 libcpuid libgee
 ```
 
-### Building from Source
-1. Clone the repository:
-```bash
-git clone https://github.com/realbxnnie/guifetch
-```
+---
 
-2. Create a build directory:
+### ⚙️ Build & Run
+
 ```bash
+git clone https://github.com/nuros-linux/ats
 meson setup builddir
-```
-
-3. Compile the application:
-```bash
 meson compile -C builddir
+sudo meson install -C builddir  # optional
 ```
 
-4. Install (optional):
+Run:  
 ```bash
-sudo meson install -C builddir
+./builddir/src/guifetch   # from build dir
+guifetch                  # if installed system-wide
 ```
 
-### Running
+---
 
-After building, you can run GuiFetch+ directly:
-```bash
-./builddir/src/guifetch
-```
+### 🏗️ Architecture
 
-Or if installed system-wide:
-```bash
-guifetch
-```
+- **Frontend:** Vala + GTK4 + libadwaita  
+- **Backend:** C for fast system info gathering  
+- **Resources:** Embedded SVGs via GResource
 
-## Dependencies
+**Key Files**  
+- `src/ui/main.vala` — Main UI logic  
+- `src/ui/Logotypes.vala` — Logotypes dictionary  
+- `src/info.c` & `src/info.h` — System info functions  
+- `data/guifetch.gresource.xml` — Resource bundle
 
-### Required
+---
 
-- **GTK4** - Modern toolkit for creating graphical user interfaces
-- **libadwaita** - Building blocks for modern GNOME applications
-- **GLib** - Low-level core library for GNOME applications
-- **GIO** - Modern, easy-to-use VFS API
+### 🤝 Contributing
 
-### Optional
+1. Fork & create a branch (`git checkout -b feature/my-feature`)  
+2. Make changes & test (`meson test -C builddir`)  
+3. Commit & push  
+4. Open a Pull Request  
 
-- **libcpuid** - Provides enhanced CPU detection and detailed processor information
+**Code Style:**  
+- Clear, descriptive names  
+- Single-purpose functions  
+- Comment complex logic  
 
-## Architecture
+---
 
-GUIFetch is built with a hybrid approach:
+### 📄 License
 
-- **Frontend**: Written in Vala using GTK4 and libadwaita for a modern, native Linux experience
-- **Backend**: System information gathering implemented in C for performance and direct system access
-- **Resources**: SVG graphics embedded using GResource for a self-contained binary
+[GPL-3.0](LICENSE)  
 
-### Key Components
+---
 
-- `src/ui/main.vala` - Main application logic and UI construction
-- `src/ui/Logotypes.vala` - Logotypes dictionary
-- `src/info.c` - System information gathering functions
-- `src/info.h` - C header definitions for Vala interop
-- `data/guifetch.gresource.xml` - Resource bundle configuration
+### 🎉 Acknowledgments
 
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
-
-### Development Setup
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Make your changes
-4. Test your changes (`meson test -C builddir`)
-5. Commit your changes (`git commit -m 'Add some amazing feature'`)
-6. Push to the branch (`git push origin feature/amazing-feature`)
-7. Open a Pull Request
-
-### Code Style
-
-- Follow standard Vala conventions for the UI code
-- Use clear, descriptive function names in C code
-- Keep functions focused and single-purpose
-- Add comments for complex logic
-
-## License
-
-This project is licensed under the GPL-3.0 License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-- Inspired by macOS "About This Mac" dialog
-- Built with the excellent GTK4 and libadwaita libraries
-- Logo adapted from the classic Tux penguin
-- Thanks to the GNOME project for the amazing development tools
+- Inspired by macOS **"About This Mac"**  
+- Built with **GTK4** & **libadwaita**  
+- Logo adapted from classic Tux penguin  
+- Thanks to the **GNOME Project**  
 
 > [!NOTE]
-> If you encounter any issues or have questions:
-> 1. Check the [Issues](https://github.com/realbxnnie/guifetch/issues) page
-> 2. Create a new issue with detailed information about your problem
-> 3. Include your distribution, GTK version, and any error messages
-
+> If you encounter issues:
+> 1. Check the [Issues](https://github.com/nuros-linux/ats/issues) page  
+> 2. Create a new issue with detailed info  
+> 3. Include your distro, GTK version, and errors
 
 ---
 
