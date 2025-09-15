@@ -125,5 +125,5 @@ guifetch                  # if installed system-wide
 
 ---
 
-<span style="font-family: 'serif'; font-size: 2em;">Made with ❤️ by [realbxnnie](https://github.com/realbxnnie)</span>
+<span style="font-family: 'serif'; font-size: 2em;">Made with ❤️ by [girisato](https://github.com/girisato)</span>
 </div>
