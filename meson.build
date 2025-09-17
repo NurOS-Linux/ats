@@ -1,4 +1,4 @@
-project('guifetch', 'vala', 'c',
+project('ats', 'vala', 'c',
     version: '0.1.0',
     license: 'GPL-3.0-or-later',
     meson_version: '>= 0.59.0',
@@ -12,7 +12,7 @@ project('guifetch', 'vala', 'c',
 # Project information
 project_name = meson.project_name()
 project_version = meson.project_version()
-project_id = 'org.guifetch.app'
+project_id = 'org.nuros.AboutThisSystem'
 
 # Add project root to include directories
 project_source_root = meson.current_source_dir()
