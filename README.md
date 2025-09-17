@@ -70,8 +70,8 @@ sudo meson install -C builddir  # optional
 
 Run:  
 ```bash
-./builddir/src/guifetch   # from build dir
-guifetch                  # if installed system-wide
+./builddir/src/ats   # from build dir
+ats                  # if installed system-wide
 ```
 
 ---
