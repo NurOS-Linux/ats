@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🖥️ GUIFetch+  
+# 🖥️ About This System 
 *A better way to get system information on Linux*  
 
 [![Latest Release](https://img.shields.io/github/v/release/nuros-linux/ats?color=blue&label=Latest%20Release)](https://github.com/nuros-linux/ats/releases)  
