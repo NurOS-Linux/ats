@@ -7,7 +7,7 @@
 ![Vala 29.3%](https://img.shields.io/badge/Vala-29.3%25-red)  
 
 Modern, GTK4-based system information viewer inspired by macOS' **"About This Mac"** dialog.  
-GUIFetch+ provides a **clean and elegant interface** to display detailed system information.
+NurOS' About This System provides a **clean and elegant interface** to display detailed system information.
 
 <img src="screenshot.png" width="60%" style="border-radius: 2.3em; box-shadow: 0 0 12px rgba(0, 140, 255, 0.8);" />
 
