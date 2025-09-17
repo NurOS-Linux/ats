@@ -34,6 +34,9 @@ public class GUIFetch : Adw.Application {
     private Gtk.Box main_content;
     private Gtk.Box info_container;
     private Gtk.Image logo_image;
+
+    // Variable to store forced distro from command-line arguments
+    private static string? forced_distro = null;
     
     public GUIFetch() {
         Object(application_id: "io.github.realbxnnie.Guifetch");
@@ -141,27 +144,31 @@ public class GUIFetch : Adw.Application {
         main_content.append(header_box);
     }
     
-private void load_embedded_logo() {
-    string distro_logo = "linux.svg";
-    
-    try {
-        string os_release;
-        FileUtils.get_contents("/etc/os-release", out os_release);
-        
-        foreach (string line in os_release.split("\n")) {
-            if (line.has_prefix("ID=")) {  
-                string distro_id = line.split("=")[1].replace("\"", "").strip();
-                distro_logo = Logotypes.get(distro_id);
-                break; // Stop after finding ID
+    private void load_embedded_logo() {
+        string distro_logo = "linux.svg";
+
+        if (forced_distro != null) {
+            // Use distro forced by command-line argument
+            distro_logo = Logotypes.get(forced_distro);
+        } else {
+            try {
+                string os_release;
+                FileUtils.get_contents("/etc/os-release", out os_release);
+                
+                foreach (string line in os_release.split("\n")) {
+                    if (line.has_prefix("ID=")) {  
+                        string distro_id = line.split("=")[1].replace("\"", "").strip();
+                        distro_logo = Logotypes.get(distro_id);
+                        break;
+                    }
+                }
+            } catch (Error e) {
+                warning("OS detection failed: %s", e.message);
             }
         }
-    } catch (Error e) {
-        warning("OS detection failed: %s", e.message);
+
+        logo_image.set_from_resource("/org/guifetch/%s".printf(distro_logo));
     }
-    
-    logo_image.set_from_resource("/org/guifetch/%s".printf(distro_logo));
-    
-}
     
     private void create_info_section() {
         // Information card
@@ -242,6 +249,28 @@ private void load_embedded_logo() {
     }
     
     public static int main(string[] args) {
+        // Command-line option to override detected distro
+        string? distro_opt = null;
+
+        OptionEntry[] entries = {
+            { "distro", 'd', 0, OptionArg.STRING, ref distro_opt, "Override detected distro", "DISTRO" },
+            { null }
+        };
+
+        try {
+            var opt_context = new OptionContext("- About This System");
+            opt_context.set_help_enabled(true);
+            opt_context.add_main_entries(entries, null);
+            opt_context.parse(ref args);
+        } catch (OptionError e) {
+            stderr.printf("Option parsing failed: %s\n", e.message);
+            return 1;
+        }
+
+        if (distro_opt != null) {
+            forced_distro = distro_opt.strip().down();
+        }
+
         var app = new GUIFetch();
         return app.run(args);
     }
