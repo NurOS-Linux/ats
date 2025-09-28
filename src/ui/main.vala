@@ -10,12 +10,13 @@ extern string get_kernel_info();
 extern string get_cpu_detailed_info();
 extern string get_memory_info();
 extern string get_gpu_info();
+extern string get_display_info();    // NEW extern
 extern string get_uptime_info();
 extern string get_storage_info();
 extern string get_serial_number();
 extern string get_hostname();
 
-// Define the _() function for translations using gettext (not dgettext)
+// Define the _() function for translations using gettext
 [CCode (cname = "gettext", cheader_filename = "libintl.h")]
 extern unowned string _(string msgid);
 
@@ -35,7 +36,6 @@ public class GUIFetch : Adw.Application {
     private Gtk.Box info_container;
     private Gtk.Image logo_image;
 
-    // Variable to store forced distro from command-line arguments
     private static string? forced_distro = null;
     
     public GUIFetch() {
@@ -51,7 +51,7 @@ public class GUIFetch : Adw.Application {
     protected override void activate() {
         window = new Adw.ApplicationWindow(this);
         window.set_title(_("About This PC"));
-        window.set_default_size(530, 650);
+        window.set_default_size(900, 650);
         window.set_resizable(false);
 
         Logotypes.init();
@@ -63,29 +63,33 @@ public class GUIFetch : Adw.Application {
     }
     
     private void setup_ui() {
-        // Header bar (minimal, like macOS)
+        // Header bar
         header_bar = new Adw.HeaderBar();
         header_bar.set_show_end_title_buttons(true);
         header_bar.set_show_start_title_buttons(true);
         header_bar.set_title_widget(new Gtk.Label("About This PC"));
         header_bar.add_css_class("flat");
         
-        // Main content container
-        main_content = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
-        main_content.set_spacing(0);
-        
-        // Create the layout
+        // Main container (horizontal layout)
+        main_content = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 20);
+        main_content.set_spacing(20);
+        main_content.set_margin_top(20);
+        main_content.set_margin_bottom(20);
+        main_content.set_margin_start(20);
+        main_content.set_margin_end(20);
+
+        // Build layout
         create_header_section();
         create_info_section();
-        
-        // Wrap in scrolled window
+
+        // Scrollable container
         var scrolled = new Gtk.ScrolledWindow();
-        scrolled.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC);
+        scrolled.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
         scrolled.set_child(main_content);
         
-        // Clamp for better proportions
+        // Clamp to max width
         var clamp = new Adw.Clamp();
-        clamp.set_maximum_size(580);
+        clamp.set_maximum_size(1000);
         clamp.set_child(scrolled);
         
         // Toolbar view
@@ -97,41 +101,33 @@ public class GUIFetch : Adw.Application {
     }
     
     private void create_header_section() {
-        // Header with logo and OS info
-        var header_box = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 20);
-        header_box.set_margin_top(40);
-        header_box.set_margin_bottom(32);
-        header_box.set_margin_start(40);
-        header_box.set_margin_end(40);
-        header_box.set_halign(Gtk.Align.CENTER);
-        
+        // Left side with logo + OS info
+        var header_box = new Gtk.Box(Gtk.Orientation.VERTICAL, 20);
+        header_box.set_halign(Gtk.Align.START);
+        header_box.set_valign(Gtk.Align.CENTER);
+
         // Logo
         logo_image = new Gtk.Image();
-        logo_image.set_pixel_size(64);
+        logo_image.set_pixel_size(96);
         logo_image.set_halign(Gtk.Align.CENTER);
         logo_image.set_valign(Gtk.Align.CENTER);
         load_embedded_logo();
         
-        // OS info box
+        // OS info
         var os_info_box = new Gtk.Box(Gtk.Orientation.VERTICAL, 4);
         os_info_box.set_halign(Gtk.Align.CENTER);
         os_info_box.set_valign(Gtk.Align.CENTER);
         
-        // OS name
-        var os_label = new Gtk.Label(null);
+        var os_label = new Gtk.Label("<span size='x-large' weight='bold'>%s</span>".printf(get_os_info()));
+        os_label.set_use_markup(true);
         os_label.set_halign(Gtk.Align.CENTER);
-        os_label.add_css_class("title-1");
-        os_label.set_markup("<span size='x-large' weight='bold'>%s</span>".printf(get_os_info()));
         
-        // Kernel info
         var kernel_label = new Gtk.Label(get_kernel_info());
-        kernel_label.set_halign(Gtk.Align.START);
-        kernel_label.add_css_class("body");
+        kernel_label.set_halign(Gtk.Align.CENTER);
         kernel_label.add_css_class("dim-label");
         
-        // Computer name
         var hostname_label = new Gtk.Label(get_hostname());
-        hostname_label.set_halign(Gtk.Align.START);
+        hostname_label.set_halign(Gtk.Align.CENTER);
         hostname_label.add_css_class("caption");
         hostname_label.add_css_class("dim-label");
         
@@ -141,6 +137,7 @@ public class GUIFetch : Adw.Application {
         
         header_box.append(logo_image);
         header_box.append(os_info_box);
+        
         main_content.append(header_box);
     }
     
@@ -148,7 +145,6 @@ public class GUIFetch : Adw.Application {
         string distro_logo = "linux.svg";
 
         if (forced_distro != null) {
-            // Use distro forced by command-line argument
             distro_logo = Logotypes.get(forced_distro);
         } else {
             try {
@@ -171,14 +167,13 @@ public class GUIFetch : Adw.Application {
     }
     
     private void create_info_section() {
-        // Information card
+        // Right side with info
         var card = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
         card.add_css_class("card");
         card.set_margin_start(40);
         card.set_margin_end(40);
         card.set_margin_bottom(40);
         
-        // Grid container for information
         info_container = new Gtk.Box(Gtk.Orientation.VERTICAL, 1);
         info_container.set_margin_top(20);
         info_container.set_margin_bottom(20);
@@ -190,18 +185,19 @@ public class GUIFetch : Adw.Application {
     }
     
     private void load_system_info() {
-        // Add detailed system information
+        // System info list
         create_info_row(_("Processor"), get_cpu_detailed_info());
         add_separator();
         create_info_row(_("Memory"), get_memory_info());
         add_separator();
         create_info_row(_("Graphics"), get_gpu_info());
         add_separator();
+        create_info_row(_("Display"), get_display_info()); // NEW SECTION
+        add_separator();
         create_info_row(_("Uptime"), get_uptime_info());
         add_separator();
         create_info_row(_("Storage"), get_storage_info());
         
-        // Add serial number if available
         string serial = get_serial_number();
         if (serial != "Unknown" && serial != "") {
             add_separator();
@@ -214,16 +210,14 @@ public class GUIFetch : Adw.Application {
         row_box.set_margin_top(12);
         row_box.set_margin_bottom(12);
         
-        // Label (left side, consistent width)
         var label_widget = new Gtk.Label(null);
         label_widget.set_xalign(0);
         label_widget.set_size_request(120, -1);
         label_widget.add_css_class("body");
         label_widget.set_valign(Gtk.Align.CENTER);
-        label_widget.set_markup("<span size='x-large' weight='bold'>%s</span>".printf(label));
+        label_widget.set_markup("<span size='large' weight='bold'>%s</span>".printf(label));
         label_widget.set_halign(Gtk.Align.CENTER);
         
-        // Value (right side, expandable)
         var value_widget = new Gtk.Label(value);
         value_widget.set_xalign(0);
         value_widget.set_hexpand(true);
@@ -249,7 +243,6 @@ public class GUIFetch : Adw.Application {
     }
     
     public static int main(string[] args) {
-        // Command-line option to override detected distro
         string? distro_opt = null;
 
         OptionEntry[] entries = {
