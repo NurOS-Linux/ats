@@ -64,9 +64,9 @@ sudo pacman -S meson vala gtk4 libadwaita glib2 libcpuid libgee
 
 ```bash
 git clone https://github.com/nuros-linux/ats
-meson setup builddir
-meson compile -C builddir
-sudo meson install -C builddir  # optional
+make setup
+make compile
+sudo make install  # optional
 ```
 
 Run:  
