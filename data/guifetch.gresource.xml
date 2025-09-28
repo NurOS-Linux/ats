@@ -51,4 +51,10 @@
       <gresource prefix="/org/guifetch">
     <file>arco.svg</file>
   </gresource>
+      <gresource prefix="/org/guifetch">
+    <file>elementary.svg</file>
+  </gresource>
+        <gresource prefix="/org/guifetch">
+    <file>emperor.svg</file>
+  </gresource>
 </gresources>
