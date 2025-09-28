@@ -661,7 +661,7 @@ char* get_display_info() {
     char* output = execute_command("xrandr --listmonitors | tail -n +2");
     if (!output) return strdup("Unknown Display");
 
-    // Cut the trash
+    // Remove the trash
     char* result = malloc(MAX_INFO_LENGTH);
     if (!result) {
         free(output);
