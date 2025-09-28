@@ -656,3 +656,21 @@ char* get_hostname() {
     }
     return strdup("Unknown");
 }
+
+char* get_display_info() {
+    char* output = execute_command("xrandr --listmonitors | tail -n +2");
+    if (!output) return strdup("Unknown Display");
+
+    // Cut the trash
+    char* result = malloc(MAX_INFO_LENGTH);
+    if (!result) {
+        free(output);
+        return strdup("Unknown Display");
+    }
+
+    strncpy(result, output, MAX_INFO_LENGTH - 1);
+    result[MAX_INFO_LENGTH - 1] = '\0';
+
+    free(output);
+    return result;
+}
