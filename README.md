@@ -3,15 +3,16 @@
 # 🖥️ About This System 
 *A better way to get system information on Linux*  
 
-[![Latest Release](https://img.shields.io/github/v/release/nuros-linux/ats?color=blue&label=Latest%20Release)](https://github.com/nuros-linux/ats/releases)  
-![Vala 29.3%](https://img.shields.io/badge/Vala-29.3%25-red)  
+[![Latest Release](https://img.shields.io/github/v/release/nuros-linux/ats?color=blue&label=Latest%20Release&style=plastic)](https://github.com/nuros-linux/ats/releases) ![GitHub top language](https://img.shields.io/github/languages/top/nuros-linux/ats?color=BBBBBB&style=plastic)
 
 Modern, GTK4-based system information viewer inspired by macOS' **"About This Mac"** dialog.  
-GUIFetch+ provides a **clean and elegant interface** to display detailed system information.
+NurOS' About This System provides a **clean and elegant interface** to display detailed system information.
 
 <img src="screenshot.png" width="60%" style="border-radius: 2.3em; box-shadow: 0 0 12px rgba(0, 140, 255, 0.8);" />
 
 ---
+
+</div>
 
 ### 🌟 Features
 
@@ -70,8 +71,8 @@ sudo meson install -C builddir  # optional
 
 Run:  
 ```bash
-./builddir/src/guifetch   # from build dir
-guifetch                  # if installed system-wide
+./builddir/src/ats   # from build dir
+ats                  # if installed system-wide
 ```
 
 ---
@@ -126,4 +127,4 @@ guifetch                  # if installed system-wide
 ---
 
 <span style="font-family: 'serif'; font-size: 2em;">Made with ❤️ by [girisato](https://github.com/girisato)</span>
-</div>
+
