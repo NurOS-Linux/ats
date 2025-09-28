@@ -21,6 +21,9 @@ namespace GuiFetch {
             DISTRO_LOGOS.set("linuxmint", "mint.svg");
             DISTRO_LOGOS.set("gentoo", "gentoo.svg");
             DISTRO_LOGOS.set("nuros", "nuros.svg");
+            DISTRO_LOGOS.set("exherbo", "exherbo.svg");
+            DISTRO_LOGOS.set("elementary", "elementary.svg");
+            DISTRO_LOGOS.set("emperor", "emperor.svg");
 
             // if you want to transform ur linux desktop into a mac LOL
             DISTRO_LOGOS.set("macos", "macos.svg");
