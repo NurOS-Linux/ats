@@ -60,13 +60,19 @@ sudo pacman -S meson vala gtk4 libadwaita glib2 libcpuid libgee
 
 ---
 
-### ⚙️ Build & Run
+### ⚙️ Build, Install & Run
 
+Build:
 ```bash
 git clone https://github.com/nuros-linux/ats
+cd ats
 make setup
 make compile
-sudo make install  # optional
+```
+
+Install (optional):
+```bash
+sudo make install
 ```
 
 Run:  
