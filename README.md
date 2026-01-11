@@ -132,5 +132,6 @@ ats                  # if installed system-wide
 
 ---
 
-<span style="font-family: 'serif'; font-size: 2em;">Made with ❤️ by [girisato](https://github.com/girisato)</span>
+<span style="font-family: 'serif'; font-size: 2em;">Made with ❤️ by [bonnie](https://github.com/b0nn133)</span>
+<i>https://nuros.org</i>
 
