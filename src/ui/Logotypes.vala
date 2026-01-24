@@ -30,7 +30,7 @@ namespace GuiFetch {
             DISTRO_LOGOS.set("apple", "macos.svg");
         }
 
-        public static string get(string distro_id) {
+        public static string get(string distro_id, string distro_id_like) {
             message("Searching logo for distro_id: '%s'", distro_id); 
             foreach (var entry in DISTRO_LOGOS.entries) {
                 message("Current entry: {\n'key': '%s',\n'value': '%s'\n}", entry.key, entry.value); 
@@ -39,6 +39,17 @@ namespace GuiFetch {
                     return entry.value;
                 }
             }
+            if (distro_id_like != null || distro_id_like != "") {
+                message("Logotype not found. Search logo for distro_id_like: '%s'", distro_id_like);
+                foreach (var entry in DISTRO_LOGOS.entries) {
+                    message("Current entry: {\n'key': '%s',\n'value': '%s'\n}", entry.key, entry.value); 
+                    if (distro_id_like.down().contains(entry.key)) {
+                        message(" Found the logotype! {\n'key': '%s',\n'value': '%s'\n}".printf(entry.key, entry.value));
+                        return entry.value;
+                    }   
+                }
+            }
+            
             message("Logotype not found. The distro ID is probably incorrect. Returning Tux");
             return "linux.svg";
         }

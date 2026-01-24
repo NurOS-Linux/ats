@@ -142,29 +142,40 @@ public class GUIFetch : Adw.Application {
     }
     
     private void load_embedded_logo() {
-        string distro_logo = "linux.svg";
+    string distro_logo = "linux.svg";
 
-        if (forced_distro != null) {
-            distro_logo = Logotypes.get(forced_distro);
-        } else {
-            try {
-                string os_release;
-                FileUtils.get_contents("/etc/os-release", out os_release);
-                
-                foreach (string line in os_release.split("\n")) {
-                    if (line.has_prefix("ID=")) {  
-                        string distro_id = line.split("=")[1].replace("\"", "").strip();
-                        distro_logo = Logotypes.get(distro_id);
-                        break;
-                    }
+    if (forced_distro != null) {
+        distro_logo = Logotypes.get(forced_distro, "");
+    } else {
+        try {
+            string os_release;
+            FileUtils.get_contents("/etc/os-release", out os_release);
+
+            string distro_id = "";
+            string distro_id_like = "";
+
+            foreach (string line in os_release.split("\n")) {
+                if (line.has_prefix("ID=")) {
+                    distro_id = line.substring(3).replace("\"", "").strip();
+                } else if (line.has_prefix("ID_LIKE=")) {
+                    distro_id_like = line.substring(8).replace("\"", "").strip();
                 }
-            } catch (Error e) {
-                warning("OS detection failed: %s", e.message);
             }
-        }
 
-        logo_image.set_from_resource("/org/guifetch/%s".printf(distro_logo));
+            if (distro_id != "") {
+                distro_logo = Logotypes.get(distro_id, distro_id_like);
+            }
+
+        } catch (Error e) {
+            warning("OS detection failed: %s", e.message);
+        }
     }
+
+    logo_image.set_from_resource(
+        "/org/guifetch/%s".printf(distro_logo)
+    );
+}
+
     
     private void create_info_section() {
         // Right side with info
