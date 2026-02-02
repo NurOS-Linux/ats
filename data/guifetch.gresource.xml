@@ -55,6 +55,9 @@
     <file>elementary.svg</file>
   </gresource>
         <gresource prefix="/org/guifetch">
-    <file>emperor.svg</file>
+    <file>void.svg</file>
+  </gresource>
+  <gresource prefix="/org/guifetch">
+    <file>kdeneon.svg</file>
   </gresource>
 </gresources>
