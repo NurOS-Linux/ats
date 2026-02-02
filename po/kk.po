@@ -8,13 +8,15 @@ msgstr ""
 "Project-Id-Version: GUIFetch 1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-25 15:52+0500\n"
-"PO-Revision-Date: 2025-06-25 16:00+0500\n"
+"PO-Revision-Date: 2026-02-02 18:05+0000\n"
 "Last-Translator: AnmiTaliDev <anmitali198@gmail.com>\n"
-"Language-Team: Kazakh <kk@li.org>\n"
+"Language-Team: Kazakh <https://hosted.weblate.org/projects/nuros/ats/kk/>\n"
 "Language: kk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.16-dev\n"
 
 #: src/ui/main.vala:48
 msgid "About This Computer"
@@ -46,7 +48,7 @@ msgstr "Сериялық нөмір"
 
 #: data/guifetch.desktop.in:2
 msgid "GUIFetch"
-msgstr "GUIFetch"
+msgstr ""
 
 #: data/guifetch.desktop.in:3
 msgid "System information viewer"
@@ -58,4 +60,4 @@ msgstr "Жүйе ақпараты"
 
 #: data/guifetch.desktop.in:18
 msgid "system;info;hardware;os;specs;"
-msgstr "жүйе;ақпарат;жабдық;ОЖ;сипаттамалар;"
+msgstr "жүйе;ақпарат;жабдық;ож;сипаттамалар;"
