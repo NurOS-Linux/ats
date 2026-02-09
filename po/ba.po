@@ -1,8 +1,8 @@
-# GUIFetch Template.
-# Copyright (C) 2025 GUIFetch Project
-# This file is distributed under the same license as the GUIFetch package.
-# AnmiTaliDev <anmitali198@gmail.com>, 2025.
-#
+# ATS Bashkir.
+# Copyright (C) 2026 NurOS.
+# This file is distributed under the same license as the ATS package.
+# Example <username@example.com>, 2026.
+
 msgid ""
 msgstr ""
 "Project-Id-Version: GUIFetch 1.0\n"
