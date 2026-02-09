@@ -62,7 +62,7 @@ vala_args = [
     '--pkg=glib-2.0',
     '--pkg=gio-2.0',
     '--target-glib=2.70',
-    '--gresources=' + project_source_root / 'data' / 'guifetch.gresource.xml'
+    '--gresources=' + project_source_root / 'data' / 'ats.gresource.xml'
 ]
 
 # Global arguments
@@ -78,8 +78,8 @@ subdir('data')
 subdir('src')
 
 # Make resources available globally
-guifetch_resources_dep = declare_dependency(
-    sources: guifetch_resources
+ats_resources_dep = declare_dependency(
+    sources: ats_resources
 )
 
 # Summary

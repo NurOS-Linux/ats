@@ -7,6 +7,6 @@ i18n.gettext(
     args: [
         '--package-name=' + project_name,
         '--package-version=' + project_version,
-        '--msgid-bugs-address=https://github.com/AnmiTaliDev/guifetch/issues'
+        '--msgid-bugs-address=https://github.com/nuros-linux/ats/issues'
     ]
 )

@@ -93,7 +93,7 @@ ats                  # if installed system-wide
 - `src/ui/main.vala` — Main UI logic  
 - `src/ui/Logotypes.vala` — Logotypes dictionary  
 - `src/info.c` & `src/info.h` — System info functions  
-- `data/guifetch.gresource.xml` — Resource bundle
+- `data/ats.gresource.xml` — Resource bundle
 
 ---
 

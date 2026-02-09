@@ -1,7 +1,7 @@
 using Gtk;
 using Adw;
 using GLib;
-using GuiFetch;
+using ATS;
 
 [CCode (cheader_filename = "info.h")]
 extern string get_os_name();
@@ -29,7 +29,7 @@ extern unowned string textdomain(string domainname);
 [CCode (cname = "bind_textdomain_codeset", cheader_filename = "libintl.h")]
 extern unowned string bind_textdomain_codeset(string domainname, string codeset);
 
-public class GUIFetch : Adw.Application {
+public class ATS : Adw.Application {
     private Adw.ApplicationWindow window;
     private Adw.HeaderBar header_bar;
     private Gtk.Box main_content;
@@ -38,14 +38,14 @@ public class GUIFetch : Adw.Application {
 
     private static string? forced_distro = null;
     
-    public GUIFetch() {
-        Object(application_id: "io.github.realbxnnie.Guifetch");
-        
+    public ATS() {
+        Object(application_id: "org.nuros.AboutThisSystem");
+
         // Initialize gettext
         Intl.setlocale();
-        bindtextdomain("guifetch", Config.LOCALEDIR);
-        bind_textdomain_codeset("guifetch", "UTF-8");
-        textdomain("guifetch");
+        bindtextdomain("ats", Config.LOCALEDIR);
+        bind_textdomain_codeset("ats", "UTF-8");
+        textdomain("ats");
     }
     
     protected override void activate() {
@@ -172,7 +172,7 @@ public class GUIFetch : Adw.Application {
     }
 
     logo_image.set_from_resource(
-        "/org/guifetch/%s".printf(distro_logo)
+        "/org/ats/%s".printf(distro_logo)
     );
 }
 
@@ -275,7 +275,7 @@ public class GUIFetch : Adw.Application {
             forced_distro = distro_opt.strip().down();
         }
 
-        var app = new GUIFetch();
+        var app = new ATS();
         return app.run(args);
     }
 }

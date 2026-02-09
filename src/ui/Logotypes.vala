@@ -1,6 +1,6 @@
 using Gee;
 
-namespace GuiFetch {
+namespace ATS {
     public class Logotypes {
         public static HashMap<string, string> DISTRO_LOGOS;
 
