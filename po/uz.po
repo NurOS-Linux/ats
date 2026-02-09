@@ -1,0 +1,62 @@
+# GUIFetch Template.
+# Copyright (C) 2025 GUIFetch Project
+# This file is distributed under the same license as the GUIFetch package.
+# AnmiTaliDev <anmitali198@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: GUIFetch 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-25 15:52+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: uz\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: src/ui/main.vala:48
+msgid "About This Computer"
+msgstr ""
+
+#: src/ui/main.vala:172
+msgid "Processor"
+msgstr ""
+
+#: src/ui/main.vala:174
+msgid "Memory"
+msgstr ""
+
+#: src/ui/main.vala:176
+msgid "Graphics"
+msgstr ""
+
+#: src/ui/main.vala:178
+msgid "Uptime"
+msgstr ""
+
+#: src/ui/main.vala:180
+msgid "Storage"
+msgstr ""
+
+#: src/ui/main.vala:186
+msgid "Serial Number"
+msgstr ""
+
+#: data/guifetch.desktop.in:2
+msgid "GUIFetch"
+msgstr ""
+
+#: data/guifetch.desktop.in:3
+msgid "System information viewer"
+msgstr ""
+
+#: data/guifetch.desktop.in:8
+msgid "System Information"
+msgstr ""
+
+#: data/guifetch.desktop.in:18
+msgid "system;info;hardware;os;specs;"
+msgstr ""
