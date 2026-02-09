@@ -8,42 +8,44 @@ msgstr ""
 "Project-Id-Version: GUIFetch 1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-25 15:52+0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2026-02-09 12:26+0000\n"
+"Last-Translator: AnmiTaliDev <anmitali198@gmail.com>\n"
+"Language-Team: Mongolian (Cyrillic script) <https://hosted.weblate.org/"
+"projects/nuros/ats/mn_Cyrl/>\n"
 "Language: mn_Cyrl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.16-dev\n"
 
 #: src/ui/main.vala:48
 msgid "About This Computer"
-msgstr ""
+msgstr "Энэхүү Компьютерын Тухай"
 
 #: src/ui/main.vala:172
 msgid "Processor"
-msgstr ""
+msgstr "Процессор"
 
 #: src/ui/main.vala:174
 msgid "Memory"
-msgstr ""
+msgstr "Санах ой"
 
 #: src/ui/main.vala:176
 msgid "Graphics"
-msgstr ""
+msgstr "График"
 
 #: src/ui/main.vala:178
 msgid "Uptime"
-msgstr ""
+msgstr "Ажилласан хугацаа"
 
 #: src/ui/main.vala:180
 msgid "Storage"
-msgstr ""
+msgstr "Хадгалах байгууламж"
 
 #: src/ui/main.vala:186
 msgid "Serial Number"
-msgstr ""
+msgstr "Серийн дугаар"
 
 #: data/guifetch.desktop.in:2
 msgid "GUIFetch"
@@ -51,7 +53,7 @@ msgstr ""
 
 #: data/guifetch.desktop.in:3
 msgid "System information viewer"
-msgstr ""
+msgstr "Системийн мэдээлэл харагч"
 
 #: data/guifetch.desktop.in:8
 msgid "System Information"
