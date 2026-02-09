@@ -1,11 +1,11 @@
-# GUIFetch English translation.
-# Copyright (C) 2025 GUIFetch Project
-# This file is distributed under the same license as the GUIFetch package.
+# ATS English translation.
+# Copyright (C) 2025 ATS Project
+# This file is distributed under the same license as the ATS package.
 # AnmiTaliDev <anmitali198@gmail.com>, 2025.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: GUIFetch 1.0\n"
+"Project-Id-Version: ATS 1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-25 15:52+0500\n"
 "PO-Revision-Date: 2025-06-25 16:00+0500\n"
@@ -44,18 +44,18 @@ msgstr "Storage"
 msgid "Serial Number"
 msgstr "Serial Number"
 
-#: data/guifetch.desktop.in:2
-msgid "GUIFetch"
-msgstr "GUIFetch"
+#: data/ats.desktop.in:2
+msgid "ATS"
+msgstr "ATS"
 
-#: data/guifetch.desktop.in:3
+#: data/ats.desktop.in:3
 msgid "System information viewer"
 msgstr "System information viewer"
 
-#: data/guifetch.desktop.in:8
+#: data/ats.desktop.in:8
 msgid "System Information"
 msgstr "System Information"
 
-#: data/guifetch.desktop.in:18
+#: data/ats.desktop.in:18
 msgid "system;info;hardware;os;specs;"
 msgstr "system;info;hardware;os;specs;"

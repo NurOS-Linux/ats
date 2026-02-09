@@ -1,63 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
-  <gresource prefix="/org/guifetch">
+  <gresource prefix="/org/ats">
     <file>linux.svg</file>
   </gresource>
-    <gresource prefix="/org/guifetch">
+    <gresource prefix="/org/ats">
     <file>arch.svg</file>
   </gresource>
-  <gresource prefix="/org/guifetch">
+  <gresource prefix="/org/ats">
     <file>debian.svg</file>
   </gresource>
-    <gresource prefix="/org/guifetch">
+    <gresource prefix="/org/ats">
     <file>fedora.svg</file>
   </gresource>
-    <gresource prefix="/org/guifetch">
+    <gresource prefix="/org/ats">
     <file>nuros.svg</file>
   </gresource>
-    <gresource prefix="/org/guifetch">
+    <gresource prefix="/org/ats">
     <file>mint.svg</file>
   </gresource>
-    <gresource prefix="/org/guifetch">
+    <gresource prefix="/org/ats">
     <file>ubuntu.svg</file>
   </gresource>
-    <gresource prefix="/org/guifetch">
+    <gresource prefix="/org/ats">
     <file>gentoo.svg</file>
   </gresource>
-      <gresource prefix="/org/guifetch">
+      <gresource prefix="/org/ats">
     <file>garuda.svg</file>
   </gresource>
-      <gresource prefix="/org/guifetch">
+      <gresource prefix="/org/ats">
     <file>evour.svg</file>
   </gresource>
-      <gresource prefix="/org/guifetch">
+      <gresource prefix="/org/ats">
     <file>cachyos.svg</file>
   </gresource>
-        <gresource prefix="/org/guifetch">
+        <gresource prefix="/org/ats">
     <file>macos.svg</file>
   </gresource>
-      <gresource prefix="/org/guifetch">
+      <gresource prefix="/org/ats">
     <file>asahi.svg</file>
   </gresource>
-      <gresource prefix="/org/guifetch">
+      <gresource prefix="/org/ats">
     <file>artix.svg</file>
   </gresource>
-      <gresource prefix="/org/guifetch">
+      <gresource prefix="/org/ats">
     <file>manjaro.svg</file>
   </gresource>
-      <gresource prefix="/org/guifetch">
+      <gresource prefix="/org/ats">
     <file>pop.svg</file>
   </gresource>
-      <gresource prefix="/org/guifetch">
+      <gresource prefix="/org/ats">
     <file>arco.svg</file>
   </gresource>
-      <gresource prefix="/org/guifetch">
+      <gresource prefix="/org/ats">
     <file>elementary.svg</file>
   </gresource>
-        <gresource prefix="/org/guifetch">
+        <gresource prefix="/org/ats">
     <file>void.svg</file>
   </gresource>
-  <gresource prefix="/org/guifetch">
+  <gresource prefix="/org/ats">
     <file>kdeneon.svg</file>
   </gresource>
 </gresources>

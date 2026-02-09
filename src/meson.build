@@ -3,7 +3,7 @@ sources = [
     'ui/main.vala',
     'ui/Logotypes.vala',
     'info.c',
-    guifetch_resources,  # Available from parent scope
+    ats_resources,  # Available from parent scope
     config_h  # Include config.h
 ]
 

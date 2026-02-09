@@ -2,17 +2,17 @@
 gnome = import('gnome')
 
 # Resources
-guifetch_resources = gnome.compile_resources(
-    'guifetch-resources',
-    'guifetch.gresource.xml',
+ats_resources = gnome.compile_resources(
+    'ats-resources',
+    'ats.gresource.xml',
     source_dir: meson.current_source_dir(),
-    c_name: 'guifetch'
+    c_name: 'ats'
 )
 
 # Desktop file
 desktop_file_in = configure_file(
-    input: 'guifetch.desktop.in',
-    output: 'guifetch.desktop',
+    input: 'ats.desktop.in',
+    output: 'ats.desktop',
     configuration: {
         'bindir': get_option('prefix') / get_option('bindir'),
         'project_id': project_id,

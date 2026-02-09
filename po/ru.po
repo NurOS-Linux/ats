@@ -1,12 +1,12 @@
-# Russian translation for GUIFetch
+# Russian translation for ATS
 # Copyright (C) 2024 AnmiTaliDev
-# This file is distributed under the same license as the guifetch package.
+# This file is distributed under the same license as the ats package.
 # AnmiTaliDev <anmitalidev@example.com>, 2024.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: guifetch 0.1.0\n"
-"Report-Msgid-Bugs-To: https://github.com/AnmiTaliDev/guifetch/issues\n"
+"Project-Id-Version: ats 0.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/AnmiTaliDev/ats/issues\n"
 "POT-Creation-Date: 2024-01-01 12:00+0000\n"
 "PO-Revision-Date: 2024-01-01 12:00+0000\n"
 "Last-Translator: AnmiTaliDev <anmitalidev@example.com>\n"
@@ -45,18 +45,18 @@ msgstr "Хранилище"
 msgid "Serial Number"
 msgstr "Серийный номер"
 
-#: data/guifetch.desktop.in:2
-msgid "GUIFetch"
-msgstr "GUIFetch"
+#: data/ats.desktop.in:2
+msgid "ATS"
+msgstr "ATS"
 
-#: data/guifetch.desktop.in:3
+#: data/ats.desktop.in:3
 msgid "System Information"
 msgstr "Информация о системе"
 
-#: data/guifetch.desktop.in:4
+#: data/ats.desktop.in:4
 msgid "View detailed system information"
 msgstr "Просмотр подробной информации о системе"
 
-#: data/guifetch.desktop.in:5
+#: data/ats.desktop.in:5
 msgid "system;information;hardware;specs;about;"
 msgstr "система;информация;железо;характеристики;о компьютере;"
