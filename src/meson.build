@@ -2,6 +2,7 @@
 sources = [
     'ui/main.vala',
     'ui/Logotypes.vala',
+    'config.vapi',
     'info.c',
     ats_resources,  # Available from parent scope
     config_h  # Include config.h
@@ -12,8 +13,7 @@ include_dirs = include_directories('.', '..')  # Include parent dir for config.h
 
 # Vala args with config
 vala_args_local = vala_args + [
-    '--vapidir=' + meson.current_source_dir(),
-    '--pkg=config'
+    '--vapidir=' + meson.current_source_dir()
 ]
 
 # Create executable

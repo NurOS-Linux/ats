@@ -1,5 +1,5 @@
 project('ats', 'vala', 'c',
-    version: '0.1.0',
+    version: '1.2.1',
     license: 'GPL-3.0-or-later',
     meson_version: '>= 0.59.0',
     default_options: [
@@ -11,7 +11,10 @@ project('ats', 'vala', 'c',
 
 # Project information
 project_name = meson.project_name()
+project_pretty_name = 'About This System'
+project_description = 'System information at a glance'
 project_version = meson.project_version()
+project_website = 'https://apps.nuros.org/en/apps/ats'
 project_id = 'org.nuros.AboutThisSystem'
 
 # Add project root to include directories
@@ -23,6 +26,9 @@ config_data = configuration_data()
 config_data.set_quoted('PROJECT_NAME', project_name)
 config_data.set_quoted('PROJECT_VERSION', project_version)
 config_data.set_quoted('PROJECT_ID', project_id)
+config_data.set_quoted('PROJECT_PRETTY_NAME', project_pretty_name)   
+config_data.set_quoted('PROJECT_DESCRIPTION', project_description)
+config_data.set_quoted('PROJECT_WEBSITE', project_website)
 config_data.set_quoted('LOCALEDIR', get_option('prefix') / get_option('localedir'))
 config_data.set_quoted('DATADIR', get_option('prefix') / get_option('datadir'))
 
